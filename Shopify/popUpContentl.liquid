@@ -1,0 +1,45 @@
+{{ 'pop-up.css' | asset_url | stylesheet_tag }}
+
+<div id="custom-popup" class="popup">
+  <div class="popup-content">
+    <img src="{{ 'Resorces.jpg' | asset_url }}" alt="Engaging Visual" class="popup-image" width="300" height="200">
+    <div class="second">
+      <span class="close-popup" onclick="closePopup()">x</span>
+      <h2 class="class-popup-heading">The Black Friday Sale is here</h2>
+      <p>Subscribe and get our best price of the year</p>
+      <form id="subscription-form" class="subscription-form">
+        <label for="email" class="label-email">Email*</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <button class="discount-button" type="submit">Get an EXTRA 20% off</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById('custom-popup').style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('custom-popup').style.display = 'none';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const popupButton = document.getElementById('open-popup-button');
+    const closeButton = document.querySelector('.close-popup');
+    const form = document.getElementById('subscription-form');
+
+    popupButton.addEventListener('click', openPopup);
+    closeButton.addEventListener('click', closePopup);
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Your form submission logic here
+
+      // After handling the form submission, you may want to close the popup
+      closePopup();
+    });
+  });
+</script>

@@ -1,0 +1,39 @@
+<!--
+  templateType: "page"
+  isAvailableForNewContent: true
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+</head>
+<body>
+  <!-- Button to open the popup -->
+  <button onclick="openPopup()">Open Popup</button>
+
+  <!-- Popup content -->
+  <div id="custom-popup" class="popup">
+    <div class="popup-content">
+      <!-- Popup image -->
+      <img src="{{ get_asset_url('/Resorces.jpg') }}" alt="Engaging Visual" class="popup-image" width="300" height="200">
+
+      <!-- Popup content -->
+      <div class="second">
+        <span class="close-popup" onclick="closePopup()">x</span>
+        <h2 class="class-popup-heading">The Black Friday Sale is here</h2>
+        <p>Subscribe and get our best price of the year</p>
+
+        <!-- Form for subscription -->
+        <form id="subscription-form" class="subscription-form">
+          <label for="email" class="label-email">Email*</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+          <button class="discount-button" type="button" onclick="submitForm()">Get an EXTRA 20% off</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+ 
+</body>
+</html>
